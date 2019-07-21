@@ -56,9 +56,11 @@ function playRound(playerSelection, computerSelection) {
 let person = prompt("Please, type your name: ");                         
 
 for (i=0; i<5; i++) {
-    let playerSelection = prompt("Hello, " + person.charAt(0).toUpperCase()+ person.slice(1).toLowerCase() + "." + " Dou you prefer Rock, Paper or Scissors? ");    
+    let playerSelection = prompt("Hello, " + person.charAt(0).toUpperCase() + person.slice(1).toLowerCase() + 
+        "." + " Dou you prefer Rock, Paper or Scissors? ");    
     const computerSelection = computerPlayer();    
     playRound(playerSelection, computerSelection);                                     
 }       
 
-document.getElementById("result").innerHTML = person.charAt(0).toUpperCase() + person.slice(1).toLowerCase() + "," + " your result is: " + playerScore; 
+document.getElementById("result").innerHTML = person.charAt(0).toUpperCase() + person.slice(1).toLowerCase() + "," + 
+    " your result is: " + playerScore; 
