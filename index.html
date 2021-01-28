@@ -1,24 +1,28 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Rock, Paper and Scissors</title>
-        <meta charset="UTF-8">
-        <meta name="description" content="The Rock, Paper and Scissors Project">
-        <meta name="author" content="James Kazuza Jr. (Tiago Goncalves)">
-        <link rel="stylesheet" type="text/css" href="style.css">                
+<html lang="en">
+    <head>        
+        <title>The Rock, Paper and Scissors Game</title>
+        <meta charset="UTF-8" />
+        <meta name="author" content="James Kazuza Jr." />
+        <meta name="description" content="The Rock, Paper and Scissors Game Project" />
+        <link rel="stylesheet" type="text/css" href="style.css" />
+        <script type="text/javascript" src="script.js"></script>
     </head>
-    <body>        
-        <h2>The Rock, Paper and Scissors Game</h2>
-        <img src="the_game.jpg" alt="The Game"><br>
-        <p id="result"></p>
+    <body>
 
-        <h4>The rules of the game:</h4>
+        <h1>The Rock, Paper and Scissors Game</h1>
+        <img src="game.jpg" alt ="The Rock, Paper and Scissors Game" /><br>
+        
+        <h2 id="centralize">Let's play the game!</h2>
+        <button type="button" onclick="rockPaperScissors()">Click me!</button>
+        <p id="result"></p>                        
+        
+        <h2>The rules of the game:</h2>
         <ul>
-            <li>Rock wins against scissors.</li>
-            <li>Scissors win against paper.</li>
-            <li>Paper wins against rock.</li>
+            <li>Rock wins against Scissors</li>
+            <li>Scissors wins against Paper</li>
+            <li>Paper wins against Rock</li>
         </ul>
 
-        <script type="text/javascript" src="script.js"></script>        
     </body>
 </html>

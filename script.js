@@ -1,66 +1,68 @@
-function computerPlayer(){
-    let computerPlay = Math.random();
-    if(computerPlay<=0.33){
-        return "rock";
-    } else if(computerPlay>=0.66){
-        return "paper";
-    } else {
-        return "scissors";
-    }                
-}   
+function rockPaperScissors() {
 
-let computerScore = 0;
-let playerScore = 0; 
-let win = "You win!";
-let lose = "You lose!";
-let tie = "It's a tie!";                                   
-
-function playRound(playerSelection, computerSelection) {
-      
-    if(playerSelection.toLowerCase() === "rock"){
-        if(computerSelection === "scissors"){                        
-            playerScore += 1;
-            return win;
-
-        }else if(computerSelection === "paper"){
-            computerScore += 1;
-            return lose;
-        }else {                        
-            return tie;
-        }                    
-    }
-    if(playerSelection.toLowerCase() === "paper"){
-        if(computerSelection === "rock"){
-            playerScore += 1;
-            return win;
-        }else if(computerSelection === "scissors"){
-            computerScore += 1;
-            return lose;
-        }else {
-            return tie;
+    function choiceElements() {
+        let choiceElement = Math.random();
+        if (choiceElement <= 0.33) {
+            return "rock";
+        } else if (choiceElement >= 0.66) {
+            return "paper";
+        } else {
+            return "scissors";
         }
     }
-    if(playerSelection.toLowerCase() === "scissors"){
-        if(computerSelection === "rock"){
-            computerScore += 1;
-            return lose;
-        }else if(computerSelection === "paper"){
-            playerScore += 1;
-            return win;
-        }else {
-            return tie;
+    
+    let machineScore = 0;
+    let personScore = 0;
+    let win = "You win!";
+    let lose = "You lose!";
+    let tie = "It's a tie!";
+    
+    function theGame(personChoice, machineChoice) {
+        if (personChoice.toLowerCase() === "rock") {
+            if (machineChoice === "scissors") {
+                personScore += 1;
+                return win;
+            } else if (machineChoice === "paper") {
+                machineScore += 1;
+                return lose;
+            } else {
+                return tie;
+            }            
         }
-    }                 
-}   
-
-let person = prompt("Please, type your name: ");                         
-
-for (i=0; i<5; i++) {
-    let playerSelection = prompt("Hello, " + person.charAt(0).toUpperCase() + person.slice(1).toLowerCase() + 
-        "." + " Dou you prefer Rock, Paper or Scissors? ");    
-    const computerSelection = computerPlayer();    
-    playRound(playerSelection, computerSelection);                                     
-}       
-
-document.getElementById("result").innerHTML = person.charAt(0).toUpperCase() + person.slice(1).toLowerCase() + "," + 
-    " your result is: " + playerScore; 
+        if (personChoice.toLowerCase() === "paper") {
+            if (machineChoice === "rock") {
+                personScore += 1;
+                return win;
+            } else if (machineChoice === "scissors") {
+                machineScore += 1;
+                return lose;
+            } else {
+                return tie;    
+            }
+        }
+        if (personChoice.toLowerCase() === "scissors") {
+            if (machineChoice === "paper") {
+                personScore += 1;
+                return win;
+            } else if (machineChoice === "rock") {
+                machineScore += 1;
+                return lose;
+            } else {
+                return tie;
+            }
+        }
+    }
+    
+    let playerName = prompt("Type your name: ");
+    
+    for (i=0; i<5; i++) {
+        let personChoice = prompt("Hello, " + playerName.charAt(0).toUpperCase() + 
+        playerName.slice(1).toLowerCase() + "." + " Do you prefer: Rock, Paper or Scissor?");
+        const machineChoice = choiceElements();
+        theGame(personChoice, machineChoice);
+    }
+    
+    document.getElementById("result").innerHTML = playerName.charAt(0).toUpperCase() + 
+    playerName.slice(1).toLowerCase() + "," + " your result is: " + personScore; 
+            
+}    
