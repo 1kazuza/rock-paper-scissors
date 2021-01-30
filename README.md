@@ -1,4 +1,4 @@
 # The Rock Paper Scissors Project.
 
-![Screenshot] (game.jpg)
+![Image of The Rock, Paper and Scissor Project] (https://1kazuza.github.io/rock-paper-scissors/images/game.jpg)
 
